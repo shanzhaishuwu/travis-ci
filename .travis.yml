@@ -2,21 +2,27 @@ language: python
 sudo: required
 jobs:
   include:
-    - name: "Python 3.9 on macOS"
-      os: osx
-      osx_image: xcode12.5.1
-      language: shell
-
+  - name: Python 3.9 on macOS
+    os: osx
+    osx_image: xcode12.5.1
+    language: shell
 before_install:
-  - python3 --version
-  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  - sudo python3 get-pip.py
-install:  # 安装依赖, 指定安装脚本， 可多个; 若某个cmd构建失败，都会停下来；若不需要安装，跳过直接设置install: true
-  - pip3 install boto3 --user
-  - sudo gem install fastlane
+- python3 --version
+- curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+- sudo python3 get-pip.py
+install:
+- pip3 install boto3 --user
+- sudo gem install fastlane
 branches:
   only:
-    - master
-script:   # 运行脚本，指定构建或测试脚本，可多个；
-  - python3 ./travis.py
-
+  - master
+before_script:
+  - chmod +x scripts/add-key.sh 
+script:
+- python3 ./travis.py
+env:
+  global:
+  - APPNAME="travis"
+  - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
+  - PROFILE_NAME="tapnow_adc"
+    secure: sc+nSLVj+Cnub9Lf/cMYc1MKquDgY9PiqyXqK0tkDcPFymcf0anpHJRfuLuQ/NhLplLV/ObU3J1Ys9J2SBETCa0Gjkkcalz+RVCu1d9cIoYKj1whaM3YnmvYipQoFQrqbR2GTng4PhxXjGL6hCF8bwVOQJ7XGx9Fsgkin8QpWBqovh2mcoagCz/s/nRmjQxmmXt77s/o53l7DBbcawLZqx2A5LX0I+b69/aNiuCWK9M58YPQe7mvaEMv5vu/aG3DAvhJCCPzIjPJC/uvp5CBFn708cdxWapRFpLqB066BBTKrhgTBoSCRQcUZt2ScnKgSUO7/tG8tnt0QtGAeNrpIqZsdDgNCxPC7QVzcD7aKbi3eSeeJkGtqE7tdyW5iCCQBBcS8tPO2jWOXtKQA+NHG9FkQN7rE24x6Xj+QNXR9bRFLygPlnZnsYoEcXLvxw8jqfRztHO2jw08Z7QIuh60+7PTMm+2pCImywyZVpdIzuxB+2NxYZPY7VGZ5BCqymwIrRMAvi8ptX7CForbIZRiJYNURzqLDM03M56gpUw4NYQ3/Wjp/q9lMx5sFvJBS4plsnIlAd3znVqyAOv8j7dBYfUT7wpqF8PFn/mnugOR+4lnyZG7iHpIDooyf7U886kIwcY+euSHYVA2cRz8ZOxTnlWWyUX2+c4b1xkgFyst15o=

@@ -57,11 +57,12 @@ def process():
     # 打包
     if package():
         # 打包成功，切换目录方便上传
-        path = os.path.join(os.getcwd(), 'fastlane/package')
-        os.chdir(path)
+        print('打包成功！')
+        # path = os.path.join(os.getcwd(), 'fastlane/package')
+        # os.chdir(path)
 
-        # 上传文件
-        upload()
+        # # 上传文件
+        # upload()
 
 
 if __name__ == '__main__':
