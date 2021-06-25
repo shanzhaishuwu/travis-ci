@@ -56,8 +56,6 @@ def package():
 def process():
     # 打包
     try:
-        cmd = 'chmod 777 scripts/add-key.sh'
-        os.system(cmd)
         cmd = 'pod install'
         os.system(cmd)
         if package():

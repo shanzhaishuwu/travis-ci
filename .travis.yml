@@ -1,11 +1,13 @@
 language: python
 sudo: required
+# 初始化环境
 jobs:
   include:
   - name: Python 3.9 on macOS
     os: osx
     osx_image: xcode12.5.1
     language: shell
+# 设置相关证书
 env:
   global:
     - APPNAME="travis"
@@ -13,15 +15,21 @@ env:
     - PROFILE_NAME="tapnow_adc"
     - secure: 3RJ73y5EAqDMbkkn3fMMPWRtH3Qew+w+Ve0zszDLB0CirtxPbgzvs1mNHhsjMBydz4Ah5/w1s5tsyTxDMHk0YqxNOVyOVJ5g519LdsAZ7coZ6oNrRxNdVsaYSWIUL3Cy0uwpA9BRl7qkGlGCHdfvEVjrhCv1SLyNPxee7Tk5YxV++lq51URXZrCg9dEvLhi3et/1lpQclbySKTiVMfZhSDH5s86R9U6rCPoOR07zSqGleMzolUIp10YX+aETyhYm8FGT3UC+kOzqkSZobD4MbylnyXO5HANZ6uN3REz7QZIB5Ai2cCmOhW8fjv51QWuEESm6sYsS13C7k7+yePKPXXCrOGTIEbBJNWotRZeGyeaGScWi5MAHYlS7NtpCiiI7nXJniFa1Syn2L0mOFGap8ZLyJdFSkPYC7OG4A+xqd9QrPG2GO5SLsijHU4ZFHbdU3o0tCC96vFrkYKvdzdNj4kLT6UxPk6+/wyp5N3w5eAo9kse32k/4u2nKP+tJrWR27dcTc3jJQ+7JYaMFy9qLJEbX6ZR+GSuq8EemXE1mOtCdNoD4p5szBnGI+swE7HI1DcS2UjR7nFjSQ/7V4Hu+w7M1H5eLvatWlmTXPH5co1hRHBOmm1LR8srOdgiKY4QHp89mYBC1MNHw0KdQJ7jvb0dOK0yz43HCuxLfb5pHa78=
 before_install:
+  # 安装python依赖
   - python3 --version
   - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
   - sudo python3 get-pip.py
+  # 安装fastlane
   - sudo gem install fastlane
+  # 安装cocoapods
   - sudo gem install cocoapods -v 1.10.1
+  # 证书使用
+  - chmod 777 scripts/add-key.sh
 install:
+  # 安装aws3的依赖
   - pip3 install boto3 --user
 branches:
   only:
   - master
 script:
-  - python3 ./travis.py
+  - python3 travis.py
