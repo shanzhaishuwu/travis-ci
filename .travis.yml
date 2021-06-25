@@ -25,6 +25,7 @@ branches:
   - master
 before_script:
   - chmod +x ./scripts/add-key.sh 
+  - pod install
 script:
-- python3 ./travis.py
+  - python3 ./travis.py
 
