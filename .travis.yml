@@ -1,8 +1,6 @@
 language: python
 python: 
   - "3.9"
-services:
-  - myssql
 install:  # 安装依赖, 指定安装脚本， 可多个; 若某个cmd构建失败，都会停下来；若不需要安装，跳过直接设置install: true
   - pip3 install boto3 --user
 script:   # 运行脚本，指定构建或测试脚本，可多个；
