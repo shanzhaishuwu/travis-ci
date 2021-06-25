@@ -8,7 +8,6 @@ platform :ios do
     # 获取profile
     get_provisioning_profile(
       adhoc: true,
-      force: false,
       filename: "adhoc.mobileprovision",
       readonly: true
     )
