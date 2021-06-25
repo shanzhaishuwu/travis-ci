@@ -55,14 +55,19 @@ def package():
 # 打包步骤
 def process():
     # 打包
-    if package():
-        # 打包成功，切换目录方便上传
-        print('打包成功！')
-        # path = os.path.join(os.getcwd(), 'fastlane/package')
-        # os.chdir(path)
+    try:
+        if package():
+            # 打包成功，切换目录方便上传
+            print('打包成功！')
+            # path = os.path.join(os.getcwd(), 'fastlane/package')
+            # os.chdir(path)
 
-        # # 上传文件
-        # upload()
+            # # 上传文件
+            # upload()
+        else:
+            print('error')
+    except Exception as e:
+        print(e)
 
 
 if __name__ == '__main__':
