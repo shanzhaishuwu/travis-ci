@@ -1,29 +1,28 @@
 language: python
 sudo: required
-env:
-  global:
-  - APPNAME="travis"
-  - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
-  - PROFILE_NAME="tapnow_adc"
-  - secure: sc+nSLVj+Cnub9Lf/cMYc1MKquDgY9PiqyXqK0tkDcPFymcf0anpHJRfuLuQ/NhLplLV/ObU3J1Ys9J2SBETCa0Gjkkcalz+RVCu1d9cIoYKj1whaM3YnmvYipQoFQrqbR2GTng4PhxXjGL6hCF8bwVOQJ7XGx9Fsgkin8QpWBqovh2mcoagCz/s/nRmjQxmmXt77s/o53l7DBbcawLZqx2A5LX0I+b69/aNiuCWK9M58YPQe7mvaEMv5vu/aG3DAvhJCCPzIjPJC/uvp5CBFn708cdxWapRFpLqB066BBTKrhgTBoSCRQcUZt2ScnKgSUO7/tG8tnt0QtGAeNrpIqZsdDgNCxPC7QVzcD7aKbi3eSeeJkGtqE7tdyW5iCCQBBcS8tPO2jWOXtKQA+NHG9FkQN7rE24x6Xj+QNXR9bRFLygPlnZnsYoEcXLvxw8jqfRztHO2jw08Z7QIuh60+7PTMm+2pCImywyZVpdIzuxB+2NxYZPY7VGZ5BCqymwIrRMAvi8ptX7CForbIZRiJYNURzqLDM03M56gpUw4NYQ3/Wjp/q9lMx5sFvJBS4plsnIlAd3znVqyAOv8j7dBYfUT7wpqF8PFn/mnugOR+4lnyZG7iHpIDooyf7U886kIwcY+euSHYVA2cRz8ZOxTnlWWyUX2+c4b1xkgFyst15o=
 jobs:
   include:
-    - name: "Python 3.9 on macOS"
-      os: osx
-      osx_image: xcode12.5.1
-      language: shell
-
-before_install: # 安装环境
-  - python3 --version
-  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  - sudo python3 get-pip.py
-install:  # 安装依赖, 指定安装脚本， 可多个; 若某个cmd构建失败，都会停下来；若不需要安装，跳过直接设置install: true
-  - pip3 install boto3 --user
-  - sudo gem install fastlane
-  - sudo gem install cocoapods -v 1.10.1
+  - name: Python 3.9 on macOS
+    os: osx
+    osx_image: xcode12.5.1
+    language: shell
+env:
+  global:
+    - APPNAME="travis"
+    - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
+    - PROFILE_NAME="tapnow_adc"
+    - secure: 3RJ73y5EAqDMbkkn3fMMPWRtH3Qew+w+Ve0zszDLB0CirtxPbgzvs1mNHhsjMBydz4Ah5/w1s5tsyTxDMHk0YqxNOVyOVJ5g519LdsAZ7coZ6oNrRxNdVsaYSWIUL3Cy0uwpA9BRl7qkGlGCHdfvEVjrhCv1SLyNPxee7Tk5YxV++lq51URXZrCg9dEvLhi3et/1lpQclbySKTiVMfZhSDH5s86R9U6rCPoOR07zSqGleMzolUIp10YX+aETyhYm8FGT3UC+kOzqkSZobD4MbylnyXO5HANZ6uN3REz7QZIB5Ai2cCmOhW8fjv51QWuEESm6sYsS13C7k7+yePKPXXCrOGTIEbBJNWotRZeGyeaGScWi5MAHYlS7NtpCiiI7nXJniFa1Syn2L0mOFGap8ZLyJdFSkPYC7OG4A+xqd9QrPG2GO5SLsijHU4ZFHbdU3o0tCC96vFrkYKvdzdNj4kLT6UxPk6+/wyp5N3w5eAo9kse32k/4u2nKP+tJrWR27dcTc3jJQ+7JYaMFy9qLJEbX6ZR+GSuq8EemXE1mOtCdNoD4p5szBnGI+swE7HI1DcS2UjR7nFjSQ/7V4Hu+w7M1H5eLvatWlmTXPH5co1hRHBOmm1LR8srOdgiKY4QHp89mYBC1MNHw0KdQJ7jvb0dOK0yz43HCuxLfb5pHa78=
+before_install:
+- python3 --version
+- curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+- sudo python3 get-pip.py
+install:
+- pip3 install boto3 --user
+- sudo gem install fastlane
+- sudo gem install cocoapods -v 1.10.1
 branches:
   only:
-    - master
-script:   # 运行脚本，指定构建或测试脚本，可多个；
-  - chmod +x ./scripts/add-key.sh
-  - python3 ./travis.py
+  - master
+script:
+- chmod +x scripts/add-key.sh
+- python3 ./travis.py

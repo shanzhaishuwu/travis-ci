@@ -6,7 +6,7 @@ security unlock-keychain -p travis ios-build.keychain
 security set-keychain-settings -t 3600 -l ~/Library/Keychains/ios-build.keychain
 
 security import ./profile/ios_distribution_zhenghao.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
-security import ./profile/distribution.p12 -k ~/Library/Keychains/ios-build.keychain -P $KEY_PASSWORD -A
+security import ./profile/dis.p12 -k ~/Library/Keychains/ios-build.keychain -P $KEY_PASSWORD -A
 
 echo "list keychains: "
 security list-keychains
