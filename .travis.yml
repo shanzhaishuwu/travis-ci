@@ -1,4 +1,4 @@
-language: python
+language: objective-c
 # 初始化环境
 jobs:
   include:
