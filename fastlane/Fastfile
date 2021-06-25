@@ -1,0 +1,34 @@
+default_platform(:ios)
+platform :ios do 
+  lane :beta_release do |options|
+    # 版本号设置
+    increment_build_number(
+      build_number: options[:buildnumber]
+      )
+    # 打包ipa文件
+    buildapp(
+      workspace: "travis.xcworkspace",
+      configuration: "Release",
+      scheme: "travis",
+      export_method: "ad-hoc",
+      output_name: options[:ipaname]
+      )
+    
+    # 上传到蒲公英
+    # pgyer(api_key: "xxx", user_key: "xxx", update_description: options[:message])
+  end
+
+  desc "build app"
+  private_lane :buildapp do |options|
+    gym(
+      workspace: options[:workspace],
+      configuration: options[:configuration],
+      scheme: options[:scheme],
+      clean: true,
+      export_method: options[:export_method],
+      output_directory: "./fastlane/package/",
+      output_name: options[:output_name],
+      sdk: "iphoneos"
+      )
+  end 
+end

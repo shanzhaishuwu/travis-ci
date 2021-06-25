@@ -42,8 +42,8 @@ def package():
         os.system(cmd)
 
         today = time.strftime("%Y%m%d%H%M%S", time.localtime()) 
-        cmd = 'fastlane beta_release buildnumber:' + today
-
+        cmd = 'fastlane beta_release buildnumber:' + today  + ' ipaname:travis-' + today + '.ipa' 
+ 
         os.system(cmd)
     except Exception as e:
         print('打包出错！！！！！！！！！')
