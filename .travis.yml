@@ -20,8 +20,6 @@ before_install:
   - sudo gem install cocoapods -v 1.10.1
 install:
   - pip3 install boto3 --user
-  - pod install
-  - chmod 777 scripts/add-key.sh
 branches:
   only:
   - master

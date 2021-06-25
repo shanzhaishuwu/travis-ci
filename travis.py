@@ -56,6 +56,10 @@ def package():
 def process():
     # 打包
     try:
+        cmd = 'chmod 777 scripts/add-key.sh'
+        os.system(cmd)
+        cmd = 'pod install'
+        os.system(cmd)
         if package():
             # 打包成功，切换目录方便上传
             print('打包成功！')
