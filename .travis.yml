@@ -9,6 +9,7 @@ jobs:
 
 before_install:
   - python3 --version
+  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
   - sudo python3 get-pip.py
 install:  # 安装依赖, 指定安装脚本， 可多个; 若某个cmd构建失败，都会停下来；若不需要安装，跳过直接设置install: true
   - pip3 install boto3 --user
