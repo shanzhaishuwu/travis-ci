@@ -1,5 +1,4 @@
 language: python
-sudo: required
 # 初始化环境
 jobs:
   include:
@@ -18,11 +17,11 @@ before_install:
   # 安装python依赖
   - python3 --version
   - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  - sudo python3 get-pip.py
+  - python3 get-pip.py
   # 安装fastlane
-  - sudo gem install fastlane
+  - gem install fastlane
   # 安装cocoapods
-  - sudo gem install cocoapods -v 1.10.1
+  - gem install cocoapods -v 1.10.1
   # 证书使用
   - chmod 777 scripts/add-key.sh
 install:

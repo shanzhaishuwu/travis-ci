@@ -1,7 +1,7 @@
 #!/bin/sh
 # Create a custom keychain
 security create-keychain -p travis ios-build.keychain
-security default-keychain -d user -s ios-build.keychain
+security default-keychain -d -s ios-build.keychain
 security unlock-keychain -p travis ios-build.keychain
 security set-keychain-settings -t 3600 -u ios-build.keychain
 
