@@ -56,7 +56,6 @@
 				EF211E5ABBD9B450C4B87F0E /* Pods-travis.debug.xcconfig */,
 				09BE3A8125D91FE1CA69493A /* Pods-travis.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -341,6 +340,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Hao Zheng (WMCJ7HY2MH)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F6CYAWT7QB;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = travis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,6 +364,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Hao Zheng (F6CYAWT7QB)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F6CYAWT7QB;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = travis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
