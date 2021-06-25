@@ -5,7 +5,6 @@ env:
   - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
   - PROFILE_NAME="tapnow_adc"
   - secure: sc+nSLVj+Cnub9Lf/cMYc1MKquDgY9PiqyXqK0tkDcPFymcf0anpHJRfuLuQ/NhLplLV/ObU3J1Ys9J2SBETCa0Gjkkcalz+RVCu1d9cIoYKj1whaM3YnmvYipQoFQrqbR2GTng4PhxXjGL6hCF8bwVOQJ7XGx9Fsgkin8QpWBqovh2mcoagCz/s/nRmjQxmmXt77s/o53l7DBbcawLZqx2A5LX0I+b69/aNiuCWK9M58YPQe7mvaEMv5vu/aG3DAvhJCCPzIjPJC/uvp5CBFn708cdxWapRFpLqB066BBTKrhgTBoSCRQcUZt2ScnKgSUO7/tG8tnt0QtGAeNrpIqZsdDgNCxPC7QVzcD7aKbi3eSeeJkGtqE7tdyW5iCCQBBcS8tPO2jWOXtKQA+NHG9FkQN7rE24x6Xj+QNXR9bRFLygPlnZnsYoEcXLvxw8jqfRztHO2jw08Z7QIuh60+7PTMm+2pCImywyZVpdIzuxB+2NxYZPY7VGZ5BCqymwIrRMAvi8ptX7CForbIZRiJYNURzqLDM03M56gpUw4NYQ3/Wjp/q9lMx5sFvJBS4plsnIlAd3znVqyAOv8j7dBYfUT7wpqF8PFn/mnugOR+4lnyZG7iHpIDooyf7U886kIwcY+euSHYVA2cRz8ZOxTnlWWyUX2+c4b1xkgFyst15o=
-
 sudo: required
 jobs:
   include:
