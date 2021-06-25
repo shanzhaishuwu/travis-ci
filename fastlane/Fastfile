@@ -6,12 +6,12 @@ platform :ios do
       build_number: options[:buildnumber]
       )
     # 获取profile
-    get_provisioning_profile(
-      adhoc: true,
-      filename: "adhoc.mobileprovision",
-      readonly: true
-    )
-    # 打包ipa文件
+    # get_provisioning_profile(
+    #   adhoc: true,
+    #   filename: "adhoc.mobileprovision",
+    #   readonly: true
+    # )
+    打包ipa文件
     buildapp(
       workspace: "travis.xcworkspace",
       configuration: "Release",

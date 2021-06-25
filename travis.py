@@ -41,6 +41,9 @@ def package():
         cmd = 'export FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT=120'
         os.system(cmd)
 
+        cmd = 'fastlane run setup_travis'
+        os.sytem(cmd)
+
         today = time.strftime("%Y%m%d%H%M%S", time.localtime()) 
         cmd = 'fastlane beta_release buildnumber:' + today  + ' ipaname:travis-' + today + '.ipa' 
  
