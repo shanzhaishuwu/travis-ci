@@ -1,4 +1,5 @@
 language: python
+
 sudo: required
 
 jobs:
@@ -19,5 +20,5 @@ branches:
     - master
 
 script:   # 运行脚本，指定构建或测试脚本，可多个；
-  - python3 travis.py
+  - python3 ./travis.py
 
