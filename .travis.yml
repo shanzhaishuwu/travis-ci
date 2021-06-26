@@ -30,4 +30,6 @@ branches:
   only:
   - master
 script:
-  - python3 travis.py
+  # - python3 travis.py
+  - pod install
+  - chmod 777 scripts/archive.sh
