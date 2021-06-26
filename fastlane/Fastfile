@@ -5,6 +5,8 @@ platform :ios do
     increment_build_number(
       build_number: options[:buildnumber]
       )
+    # 设置Sign
+    match(type: "adhoc")
     # 打包ipa文件
     buildapp(
       workspace: "travis.xcworkspace",
