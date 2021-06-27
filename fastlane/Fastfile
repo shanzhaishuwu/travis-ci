@@ -4,14 +4,20 @@ platform :ios do
     # 设置travis
     setup_travis
     # 设置munual
-    update_code_signing_settings(
-      use_automatic_signing: false
-    )
-    update_project_provisioning(
-      profile: './profile/tapnow_adc.mobileprovision',
-      build_configuration: "Release",
-      code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)"
-    )
+    codeSign()
+    # cocoapods
+    cocoapods(
+      clean_install: true,
+      )
+    # update_code_signing_settings(
+    #   use_automatic_signing: false
+    # )
+    # update_project_provisioning(
+    #   profile: "./profile/tapnow_adc.mobileprovision",
+    #   build_configuration: "Release",
+    #   code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
+    #   certificate: "./profile/ios_distribution_zhenghao.cer"
+    # )
     # 版本号设置
     increment_build_number(
       build_number: options[:buildnumber]
@@ -44,3 +50,28 @@ platform :ios do
       )
   end 
 end
+
+
+def codeSign()
+
+  create_keychain(
+    name: "ios-build.keychain",
+    password: "0728",
+    default_keychain: true,
+    unlock: true,
+    timeout: 3600,
+    lock_when_sleeps: true
+    )
+
+  install_provisioning_profile(
+    path: "./profile/tapnow_adc.mobileprovision"
+    )
+
+  import_certificate(
+    certificate_path: "./profile/dis.p12",
+    certificate_password: "0728",
+    keychain_name: "ios_build.keychain",
+    keychain_password: "0728"
+  )
+
+end 
