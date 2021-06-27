@@ -5,7 +5,8 @@ platform :ios do
     setup_travis
 
     create_keychain(
-      name: "cis.keychain-db",
+      # name: "cis.keychain-db",
+      path: "./profile/cis.keychain-db",
       password: "0728",
       default_keychain: true,
       unlock: true,
@@ -14,7 +15,7 @@ platform :ios do
     )
 
     unlock_keychain(
-      path:"cis.keychain-db",
+      path:"./profile/cis.keychain-db",
       password: "0728",
       set_default: true
     )
@@ -25,7 +26,7 @@ platform :ios do
 
     import_certificate(
       keychain_password: "0728",
-      keychain_name: "cis.keychain-db",
+      keychain_path: "./profile/cis.keychain-db",
       certificate_path: "./profile/ios_distribution_zhenghao.cer",
     )
 
