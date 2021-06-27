@@ -4,7 +4,7 @@ jobs:
   include:
   - name: Python 3.9 on macOS
     os: osx
-    osx_image: xcode12.5.1
+    osx_image: xcode12
     language: shell
 # 设置相关证书
 env:

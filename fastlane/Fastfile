@@ -7,11 +7,7 @@ platform :ios do
     install_provisioning_profile(
       path: "./profile/tapnow_adc.mobileprovision"
     )
-
-    # cocoapods
-    cocoapods(
-      clean_install: true,
-      )
+    
     # update_code_signing_settings(
     #   use_automatic_signing: false
     # )
