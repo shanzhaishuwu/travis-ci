@@ -4,11 +4,10 @@ platform :ios do
     # 设置travis
     setup_travis
     # 设置munual
-    disable_automatic_code_signing(
-      path: "./travis.xcodeproj"
+    update_code_signing_settings(
+      use_automatic_signing: false
     )
     update_project_provisioning(
-      xcodeproj: './travis.xcodeproj',
       profile: './profile/tapnow_adc.mobileprovision',
       build_configuration: "Release",
       code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)"

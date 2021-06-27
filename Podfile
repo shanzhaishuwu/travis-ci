@@ -6,5 +6,6 @@ target 'travis' do
   use_frameworks!
 
   # Pods for travis
+  pod 'MBProgressHUD'
 
 end
