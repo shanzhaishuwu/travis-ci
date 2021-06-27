@@ -18,4 +18,4 @@ security find-identity -p codesigning  ~/Library/Keychains/ios-build.keychain
 echo " ****** "
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp "./profile/tapnow_adc.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
+cp ./profile/tapnow_adc.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/

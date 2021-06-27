@@ -59,14 +59,14 @@ end
 
 def codeSign()
 
-  create_keychain(
-    name: "ios-build.keychain",
-    password: "0728",
-    default_keychain: true,
-    unlock: true,
-    timeout: 3600,
-    lock_when_sleeps: true
-    )
+  # create_keychain(
+  #   name: "ios-build.keychain",
+  #   password: "0728",
+  #   default_keychain: true,
+  #   unlock: true,
+  #   timeout: 3600,
+  #   lock_when_sleeps: true
+  #   )
 
   install_provisioning_profile(
     path: "./profile/tapnow_adc.mobileprovision"
