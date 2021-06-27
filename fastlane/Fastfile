@@ -6,10 +6,10 @@ platform :ios do
     # 设置munual
     codeSign()
     
-    match(
-      keychain_name: "ios-build.keychain",
-      keychain_password: "0728"
-    )
+    # match(
+    #   keychain_name: "ios-build.keychain",
+    #   keychain_password: "0728"
+    # )
     # cocoapods
     cocoapods(
       clean_install: true,
