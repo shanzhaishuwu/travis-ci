@@ -3,14 +3,29 @@ platform :ios do
   lane :beta_release do |options|
     # 设置travis
     setup_travis
+
+    create_keychain(
+      name: "ci.keychain-db",
+      password: "0728",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false
+    )
     
     install_provisioning_profile(
       path: "./profile/tapnow_adc.mobileprovision"
     )
 
+    # import_certificate(
+    #   keychain_password: "0728",
+    #   keychain_name: "ci.keychain-db",
+    #   certificate_path: "./profile/ios_distribution_zhenghao.cer",
+    # )
+
     import_certificate(
-      keychain_name: "ios-build.keychain",
-      keychain_path: "~/Library/Keychains/ios-build.keychain",
+      keychain_password: "0728",
+      keychain_name: "ci.keychain-db",
       certificate_path: "./profile/dis.p12",
       certificate_password: "0728"
     )
