@@ -4,6 +4,8 @@ platform :ios do
     # 设置travis
     setup_travis
 
+    delete_keychain(name: "cis.keychain-db")
+
     create_keychain(
       name: "cis.keychain-db",
       password: "0728",
@@ -65,6 +67,8 @@ platform :ios do
       output_name: options[:ipaname]
       )
     
+    delete_keychain(name: "cis.keychain-db")
+
     # 上传到蒲公英
     # pgyer(api_key: "xxx", user_key: "xxx", update_description: options[:message])
   end
