@@ -32,7 +32,7 @@ platform :ios do
       output_name: options[:output_name],
       sdk: "iphoneos",
       export_options: {
-        method: 'ad-hoc'
+        method: 'ad-hoc',
         provisioningProfiles: {
           "com.tapnow.haozheng" => "tapnow_adc.mobileprovision"
         },
