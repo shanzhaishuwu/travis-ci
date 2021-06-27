@@ -75,8 +75,6 @@ def codeSign()
   import_certificate(
     certificate_path: "./profile/dis.p12",
     certificate_password: "0728",
-    keychain_name: "ios_build.keychain",
-    keychain_password: "0728"
   )
 
 end 
