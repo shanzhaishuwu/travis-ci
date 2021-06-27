@@ -6,7 +6,7 @@ platform :ios do
       build_number: options[:buildnumber]
       )
     # 设置Sign
-    match(type: "adhoc")
+    # match(type: "adhoc")
     # 打包ipa文件
     buildapp(
       workspace: "travis.xcworkspace",
@@ -30,7 +30,14 @@ platform :ios do
       export_method: options[:export_method],
       output_directory: "./fastlane/package/",
       output_name: options[:output_name],
-      sdk: "iphoneos"
+      sdk: "iphoneos",
+      export_options: {
+        method: 'ad-hoc'
+        provisioningProfiles: {
+          "com.tapnow.haozheng" => "tapnow_adc.mobileprovision"
+        },
+        "signingStyle": "manual"
+      },
       )
   end 
 end
