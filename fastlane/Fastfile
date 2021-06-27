@@ -3,13 +3,11 @@ platform :ios do
   lane :beta_release do |options|
     # 设置travis
     setup_travis
-    # 设置munual
-    codeSign()
     
-    # match(
-    #   keychain_name: "ios-build.keychain",
-    #   keychain_password: "0728"
-    # )
+    install_provisioning_profile(
+      path: "./profile/tapnow_adc.mobileprovision"
+    )
+
     # cocoapods
     cocoapods(
       clean_install: true,
@@ -68,13 +66,11 @@ def codeSign()
   #   lock_when_sleeps: true
   #   )
 
-  install_provisioning_profile(
-    path: "./profile/tapnow_adc.mobileprovision"
-    )
+  
 
-  import_certificate(
-    certificate_path: "./profile/dis.p12",
-    certificate_password: "0728",
-  )
+  # import_certificate(
+  #   certificate_path: "./profile/dis.p12",
+  #   certificate_password: "0728",
+  # )
 
 end 
