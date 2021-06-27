@@ -54,21 +54,3 @@ platform :ios do
       )
   end 
 end
-
-
-def codeSign()
-
-  # create_keychain(
-  #   name: "ios-build.keychain",
-  #   password: "0728",
-  #   default_keychain: true,
-  #   unlock: true,
-  #   timeout: 3600,
-  #   lock_when_sleeps: true
-  #   )
-
-  
-
-  
-
-end 
