@@ -7,7 +7,12 @@ platform :ios do
     install_provisioning_profile(
       path: "./profile/tapnow_adc.mobileprovision"
     )
-    
+
+    import_certificate(
+      certificate_path: "./profile/dis.p12",
+      certificate_password: "0728",
+    )
+
     # update_code_signing_settings(
     #   use_automatic_signing: false
     # )
@@ -64,9 +69,6 @@ def codeSign()
 
   
 
-  # import_certificate(
-  #   certificate_path: "./profile/dis.p12",
-  #   certificate_password: "0728",
-  # )
+  
 
 end 
