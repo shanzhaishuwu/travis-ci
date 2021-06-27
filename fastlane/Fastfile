@@ -17,11 +17,11 @@ platform :ios do
       path: "./profile/tapnow_adc.mobileprovision"
     )
 
-    # import_certificate(
-    #   keychain_password: "0728",
-    #   keychain_name: "ci.keychain-db",
-    #   certificate_path: "./profile/ios_distribution_zhenghao.cer",
-    # )
+    import_certificate(
+      keychain_password: "0728",
+      keychain_name: "ci.keychain-db",
+      certificate_path: "./profile/ios_distribution_zhenghao.cer",
+    )
 
     import_certificate(
       keychain_password: "0728",
