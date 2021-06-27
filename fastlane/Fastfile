@@ -9,8 +9,10 @@ platform :ios do
     )
 
     import_certificate(
+      keychain_name: "ios-build.keychain",
+      keychain_path: "~/Library/Keychains/ios-build.keychain",
       certificate_path: "./profile/dis.p12",
-      certificate_password: "0728",
+      certificate_password: "0728"
     )
 
     # update_code_signing_settings(
