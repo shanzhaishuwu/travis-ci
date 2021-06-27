@@ -1,6 +1,8 @@
 default_platform(:ios)
 platform :ios do 
   lane :beta_release do |options|
+    # 设置travis
+    setup_travis
     # 版本号设置
     increment_build_number(
       build_number: options[:buildnumber]
@@ -30,14 +32,14 @@ platform :ios do
       export_method: options[:export_method],
       output_directory: "./fastlane/package/",
       output_name: options[:output_name],
-      sdk: "iphoneos",
-      export_options: {
-        method: 'ad-hoc',
-        provisioningProfiles: {
-          "com.tapnow.haozheng" => "tapnow_adc.mobileprovision"
-        },
-        "signingStyle": "manual"
-      },
-      )
+      sdk: "iphoneos"
+      # export_options: {
+      #   method: 'ad-hoc',
+      #   provisioningProfiles: {
+      #     "com.tapnow.haozheng" => "tapnow_adc.mobileprovision"
+      #   },
+      #   "signingStyle": "manual"
+      # },
+      # )
   end 
 end
