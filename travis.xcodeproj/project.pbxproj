@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					B847AC3B26856E7800D359FB = {
 						CreatedOnToolsVersion = 12.5.1;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -373,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapnow.haozheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "53b77a9a-0d19-49d6-9352-31d2b9ba1cdf";
 				PROVISIONING_PROFILE_SPECIFIER = tapnow_adc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

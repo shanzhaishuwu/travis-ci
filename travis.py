@@ -41,9 +41,6 @@ def package():
         cmd = 'export FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT=120'
         os.system(cmd)
 
-        cmd = 'fastlane run setup_travis'
-        os.system(cmd)
-
         today = time.strftime("%Y%m%d%H%M%S", time.localtime()) 
         cmd = 'fastlane beta_release buildnumber:' + today  + ' ipaname:travis-' + today + '.ipa' 
  
@@ -59,8 +56,6 @@ def package():
 def process():
     # 打包
     try:
-        cmd = 'pod install'
-        os.system(cmd)
         if package():
             # 打包成功，切换目录方便上传
             print('打包成功！')
