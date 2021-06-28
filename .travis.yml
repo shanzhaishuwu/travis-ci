@@ -6,12 +6,6 @@ jobs:
     os: osx
     osx_image: xcode12
     language: shell
-# 设置相关证书
-env:
-  global:
-    - APPNAME="travis"
-    - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
-    - PROFILE_NAME="tapnow_adc"
 before_install:
   # 安装python依赖
   - python3 --version
