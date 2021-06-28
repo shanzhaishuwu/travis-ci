@@ -23,11 +23,19 @@ platform :ios do
     )
 
     import_certificate(
+      certificate_path: "./profile/AppleWWDRCA.cer",
+      keychain_name: "cis.keychain-db",
+      keychain_password: "0728"
+    )
+
+    import_certificate(
       certificate_path: "./profile/dis.p12",
       certificate_password: "0728",
       keychain_name: "cis.keychain-db",
       keychain_password: "0728"
     )
+
+
     
     # update_project_provisioning(
     #   profile: "./profile/tapnow_adc.mobileprovision",
