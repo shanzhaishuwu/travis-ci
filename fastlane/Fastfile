@@ -33,8 +33,6 @@ platform :ios do
       path: "./profile/travis_adc.mobileprovision"
     )
 
-    import_certificate(certificate_path: "./profile/AppleWWDRCA.cer")
-
     import_certificate(
       certificate_path: "./profile/dis.p12",
       certificate_password: "0728",
