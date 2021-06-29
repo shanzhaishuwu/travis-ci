@@ -4,8 +4,11 @@ platform :ios do
 
     setup_travis
 
-    import_certificate(certificate_path: './profile/AppleWWDRCA.cer')
-    
+    import_certificate(
+      certificate_path: './profile/AppleWWDRCA.cer',
+      keychain_name: 'fastlane_tmp_keychain-db'
+      )
+
     update_code_signing_settings(
       use_automatic_signing: false
     )
