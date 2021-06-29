@@ -73,7 +73,7 @@ platform :ios do
     # )
 
     update_project_provisioning(
-      xcodeproj: "travis.xcodeproj"
+      xcodeproj: "travis.xcodeproj",
       profile: "./profile/travis_adc.mobileprovision",
       code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
       build_configuration: "Release",
