@@ -56,7 +56,7 @@ platform :ios do
     )
 
     install_provisioning_profile(
-      path: "./profile/travis_adc.mobileprovision"
+      path: "./profile/tap_adc.mobileprovision"
     )
 
     import_certificate(
@@ -66,15 +66,9 @@ platform :ios do
       keychain_password: "0728"
     )
 
-    # match(
-    #   keychain_name: "cis.keychain-db",
-    #   keychain_password: "0728",
-    #   readonly: true
-    # )
-
     update_project_provisioning(
       xcodeproj: "travis.xcodeproj",
-      profile: "./profile/travis_adc.mobileprovision",
+      profile: "./profile/tap_adc.mobileprovision",
       code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
       build_configuration: "Release",
       certificate: "./profile/dis.p12"
