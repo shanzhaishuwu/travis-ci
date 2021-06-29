@@ -2,48 +2,20 @@ default_platform(:ios)
 platform :ios do 
   lane :beta_release do |options|
 
+    # 配置tavis
     setup_travis
-
-    import_certificate(
-      certificate_path: './profile/AppleWWDRCA.cer',
-      keychain_name: 'fastlane_tmp_keychain-db'
-      )
-
-    update_code_signing_settings(
-      use_automatic_signing: false
-    )
-
-    create_keychain(
-      name: "cis.keychain-db",
-      password: "0728",
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true,
-      lock_when_sleeps: false
-    )
-
-    unlock_keychain(
-      path:"cis.keychain-db",
-      password: "0728",
-      set_default: true
-    )
-
-    install_provisioning_profile(
-      path: "./profile/travis_adc.mobileprovision"
-    )
-
-    import_certificate(
-      certificate_path: "./profile/dis.p12",
-      certificate_password: "0728",
-      keychain_name: "cis.keychain-db",
-      keychain_password: "0728"
-    )
 
     # 版本号设置
     increment_build_number(
       build_number: options[:buildnumber]
       )
+
+    # 设置manual
+    update_code_signing_settings(
+      use_automatic_signing: false
+    )
+
+    chain_cert_sign()
     
     # 打包ipa文件
     buildapp(
@@ -56,7 +28,7 @@ platform :ios do
 
     enable_automatic_code_signing(path: "travis.xcworkspace")
 
-    delete_keychain(name: "cis.keychain-db")
+    # delete_keychain(name: "cis.keychain-db")
     
   end
 
@@ -72,5 +44,42 @@ platform :ios do
       output_name: options[:output_name],
       sdk: "iphoneos"
       )
+  end 
+
+  desc "cert and sign"
+  private_lane :chain_cert_sign do |options|
+    create_keychain(
+      name: "cis.keychain-db",
+      password: "0728",
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true,
+      lock_when_sleeps: false
+    )
+
+    install_provisioning_profile(
+      path: "./profile/travis_adc.mobileprovision"
+    )
+
+    import_certificate(
+      certificate_path: "./profile/dis.p12",
+      certificate_password: "0728",
+      keychain_name: "cis.keychain-db",
+      keychain_password: "0728"
+    )
+
+    match(
+      keychain_name: "cis.keychain-db",
+      keychain_password: "0728",
+      readonly: true
+    )
+
+    update_project_provisioning(
+      profile: "./profile/travis_adc.mobileprovision",
+      code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
+      build_configuration: "Release"
+    )
+
   end 
 end
