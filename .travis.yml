@@ -11,8 +11,8 @@ before_install:
   - python3 --version
   - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
   - python3 get-pip.py
-  # 安装fastlane
-  - gem install fastlane
+  # 安装fastlane，并指定版本
+  - gem install fastlane --version "2.186.0"
   # 安装cocoapods
   - gem install cocoapods -v 1.10.1
   # 设置keychain
