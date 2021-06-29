@@ -1,8 +1,6 @@
 default_platform(:ios)
 platform :ios do 
   lane :beta_release do |options|
-    # 设置travis
-    # setup_travis
 
     update_code_signing_settings(
       use_automatic_signing: false
@@ -31,6 +29,8 @@ platform :ios do
     import_certificate(
       certificate_path: "./profile/dis.p12",
       certificate_password: "0728",
+      keychain_name: "cis.keychain-db",
+      keychain_password: "0728"
     )
 
     # 版本号设置
@@ -49,6 +49,8 @@ platform :ios do
 
     enable_automatic_code_signing(path: "travis.xcworkspace")
 
+    delete_keychain(name: "cis.keychain-db")
+    
   end
 
   desc "build app"
