@@ -25,7 +25,7 @@ platform :ios do
     )
 
     install_provisioning_profile(
-      path: "./profile/tapnow_adc.mobileprovision"
+      path: "./profile/travis_adc.mobileprovision"
     )
 
     import_certificate(
@@ -50,6 +50,8 @@ platform :ios do
       )
 
     enable_automatic_code_signing(path: "travis.xcworkspace")
+
+    delete_keychain(name: "cis.keychain-db")
     
   end
 
