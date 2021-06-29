@@ -2,6 +2,10 @@ default_platform(:ios)
 platform :ios do 
   lane :beta_release do |options|
 
+    setup_travis
+
+    import_certificate(certificate_path: './profile/AppleWWDRCA.cer')
+    
     update_code_signing_settings(
       use_automatic_signing: false
     )
@@ -26,11 +30,7 @@ platform :ios do
       path: "./profile/travis_adc.mobileprovision"
     )
 
-    import_certificate(
-      certificate_path: "./profile/AppleWWDRCA.cer",
-      keychain_name: "cis.keychain-db",
-      keychain_password: "0728"
-    )
+    import_certificate(certificate_path: "./profile/AppleWWDRCA.cer")
 
     import_certificate(
       certificate_path: "./profile/dis.p12",
