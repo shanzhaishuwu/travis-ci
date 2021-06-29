@@ -24,15 +24,8 @@ platform :ios do
       set_default: true
     )
 
-    
     install_provisioning_profile(
       path: "./profile/tapnow_adc.mobileprovision"
-    )
-
-    import_certificate(
-      certificate_path: "./profile/AppleWWDRCA.cer",
-      keychain_name: "cis.keychain-db",
-      keychain_password: "0728"
     )
 
     import_certificate(
@@ -42,14 +35,6 @@ platform :ios do
       keychain_password: "0728"
     )
 
-
-    
-    # update_project_provisioning(
-    #   profile: "./profile/tapnow_adc.mobileprovision",
-    #   build_configuration: "Release",
-    #   code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
-    #   certificate: "./profile/ios_distribution_zhenghao.cer"
-    # )
     # 版本号设置
     increment_build_number(
       build_number: options[:buildnumber]
@@ -66,10 +51,6 @@ platform :ios do
 
     enable_automatic_code_signing(path: "travis.xcworkspace")
     
-    # delete_keychain(name: "cis.keychain-db")
-
-    # 上传到蒲公英
-    # pgyer(api_key: "xxx", user_key: "xxx", update_description: options[:message])
   end
 
   desc "build app"
