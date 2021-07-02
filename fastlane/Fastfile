@@ -12,7 +12,7 @@ platform :ios do
       use_automatic_signing: false
     )
 
-    chain_cert_sign()
+    # chain_cert_sign()
     
     # 打包ipa文件
     buildapp(
@@ -22,10 +22,6 @@ platform :ios do
       export_method: "ad-hoc",
       output_name: options[:ipaname]
       )
-
-    enable_automatic_code_signing(path: "travis.xcworkspace")
-
-    # delete_keychain(name: "cis.keychain-db")
     
   end
 
@@ -45,6 +41,7 @@ platform :ios do
 
   desc "cert and sign"
   private_lane :chain_cert_sign do |options|
+    # 创建钥匙串
     create_keychain(
       name: "cis.keychain-db",
       password: "0728",
@@ -54,6 +51,7 @@ platform :ios do
       add_to_search_list: true,
       lock_when_sleeps: false
     )
+
 
     install_provisioning_profile(
       path: "./profile/tap_adc.mobileprovision"
