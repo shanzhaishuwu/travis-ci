@@ -1,10 +1,10 @@
 language: objective-c
-env:
-  global:
-  - APP_NAME="travis"
-  - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
-  - PROFILE_NAME="tap_adc"
-    secure: 2dtOuv1uyz60Cf2T9nf2u4Sb7jJ9zEvp0gYD0iRtl1BbB3IM/l/rsq1B1eOBHj4OqtOqcuxe1Lpow8j+lk5nPwZs4mPDCJVN/hgdF4zbaf8n5kRT0Y0wH9ja5bGye1KFwkRZJSiJLRtOaqM3GNLuWqOMFJcyJbVlXV3pJaykC5kilBeHCJodEsK+A+uW2GFBikqmxfV9irNkETOEmWnZ9Nu2NCO+QvhrmyzMkP2gi14EXkuxBgqAgXNGYzvbIetegDXvVOHvRMBiYGdcH15iMQvMoUIkgQ8kdSdZTDy5u6Ie/+zfZElmQmTsv28ZTGsHygN5PvcBISDGCgPfyCctNhsxJxg7QzWBLXbqGlo918EqKZ625Tre7kMA+nxtenLZwRgnnyghTQx5si9OcylI3kWJkLJTYcdJqy1VZm9uT8Pz4b5k1TCKx8r4GHEoQCDGvrbfJ438z5liJxPs/W4LJbExUKzthX+HDOBvk2bBUwZC1U9KOSJqY2n83BHo+ZhsVCw07JTYCWW/NsIClIiEiDba9jS6p+CsG7mSTG1XMhME6TQAYFVvJeUk4QmdxWHUDa8hctQpI8eCNImH/2XjR0g7PRmZ44rkMMYLhOCDCGKPbtavxjZHbajsk+ZdtZdzo4ajRpcN0hbVRxQ2rGxumhz7XpT7Vdhc5g3Fph5eU3o=
+# env:
+#   global:
+#   - APP_NAME="travis"
+#   - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
+#   - PROFILE_NAME="tap_adc"
+#     secure: 2dtOuv1uyz60Cf2T9nf2u4Sb7jJ9zEvp0gYD0iRtl1BbB3IM/l/rsq1B1eOBHj4OqtOqcuxe1Lpow8j+lk5nPwZs4mPDCJVN/hgdF4zbaf8n5kRT0Y0wH9ja5bGye1KFwkRZJSiJLRtOaqM3GNLuWqOMFJcyJbVlXV3pJaykC5kilBeHCJodEsK+A+uW2GFBikqmxfV9irNkETOEmWnZ9Nu2NCO+QvhrmyzMkP2gi14EXkuxBgqAgXNGYzvbIetegDXvVOHvRMBiYGdcH15iMQvMoUIkgQ8kdSdZTDy5u6Ie/+zfZElmQmTsv28ZTGsHygN5PvcBISDGCgPfyCctNhsxJxg7QzWBLXbqGlo918EqKZ625Tre7kMA+nxtenLZwRgnnyghTQx5si9OcylI3kWJkLJTYcdJqy1VZm9uT8Pz4b5k1TCKx8r4GHEoQCDGvrbfJ438z5liJxPs/W4LJbExUKzthX+HDOBvk2bBUwZC1U9KOSJqY2n83BHo+ZhsVCw07JTYCWW/NsIClIiEiDba9jS6p+CsG7mSTG1XMhME6TQAYFVvJeUk4QmdxWHUDa8hctQpI8eCNImH/2XjR0g7PRmZ44rkMMYLhOCDCGKPbtavxjZHbajsk+ZdtZdzo4ajRpcN0hbVRxQ2rGxumhz7XpT7Vdhc5g3Fph5eU3o=
 jobs:
   include:
   - name: Python 3.9 on macOS
