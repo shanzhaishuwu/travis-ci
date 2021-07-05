@@ -23,6 +23,7 @@ branches:
   only:
   - master
 before_script:
+- ./scripts/remove-key.sh
 - ./scripts/add-key.sh
 script:
 - python3 travis.py

@@ -32,38 +32,38 @@ platform :ios do
       )
   end 
 
-  desc "cert and sign"
-  private_lane :chain_cert_sign do |options|
-    # 创建钥匙串
-    create_keychain(
-      name: "cis.keychain-db",
-      password: "0728",
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true,
-      lock_when_sleeps: false
-    )
+  # desc "cert and sign"
+  # private_lane :chain_cert_sign do |options|
+  #   # 创建钥匙串
+  #   create_keychain(
+  #     name: "cis.keychain-db",
+  #     password: "0728",
+  #     default_keychain: true,
+  #     unlock: true,
+  #     timeout: 3600,
+  #     add_to_search_list: true,
+  #     lock_when_sleeps: false
+  #   )
 
 
-    install_provisioning_profile(
-      path: "./profile/tap_adc.mobileprovision"
-    )
+  #   install_provisioning_profile(
+  #     path: "./profile/tap_adc.mobileprovision"
+  #   )
 
-    import_certificate(
-      certificate_path: "./profile/dis.p12",
-      certificate_password: "0728",
-      keychain_name: "cis.keychain-db",
-      keychain_password: "0728"
-    )
+  #   import_certificate(
+  #     certificate_path: "./profile/dis.p12",
+  #     certificate_password: "0728",
+  #     keychain_name: "cis.keychain-db",
+  #     keychain_password: "0728"
+  #   )
 
-    update_project_provisioning(
-      xcodeproj: "travis.xcodeproj",
-      profile: "./profile/tap_adc.mobileprovision",
-      code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
-      build_configuration: "Release",
-      certificate: "./profile/dis.p12"
-    )
+  #   update_project_provisioning(
+  #     xcodeproj: "travis.xcodeproj",
+  #     profile: "./profile/tap_adc.mobileprovision",
+  #     code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
+  #     build_configuration: "Release",
+  #     certificate: "./profile/dis.p12"
+  #   )
 
-  end 
+  # end 
 end
