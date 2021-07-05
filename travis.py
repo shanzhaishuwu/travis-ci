@@ -44,6 +44,9 @@ def package():
         cmd = 'export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=hyxj-ujdn-flod-ougd'
         os.system(cmd)
 
+        cmd = 'fastlane match adhoc --readonly'
+        os.system(cmd)
+
         today = time.strftime("%Y%m%d%H%M%S", time.localtime()) 
         cmd = 'fastlane beta_release buildnumber:' + today  + ' ipaname:travis-' + today + '.ipa' 
  

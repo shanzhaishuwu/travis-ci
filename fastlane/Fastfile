@@ -7,11 +7,6 @@ platform :ios do
       build_number: options[:buildnumber]
       )
 
-    # 设置manual
-    update_code_signing_settings(
-      use_automatic_signing: false
-    )
-
     # chain_cert_sign()
     
     # 打包ipa文件
