@@ -6,8 +6,6 @@ platform :ios do
     increment_build_number(
       build_number: options[:buildnumber]
       )
-
-    match(git_basic_authorization: "aGFvemhlbmctbG9naWM6Z2hwX0tmeXFpcTZnaWQxcmtjWkUxNXVwcWgxOFNYeTFQYzBOQUhVdg==")
     
     # 打包ipa文件
     buildapp(

@@ -41,9 +41,6 @@ def package():
         cmd = 'export FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT=120'
         os.system(cmd)
 
-        cmd = 'export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=hyxj-ujdn-flod-ougd'
-        os.system(cmd)
-
         today = time.strftime("%Y%m%d%H%M%S", time.localtime()) 
         cmd = 'fastlane beta_release buildnumber:' + today  + ' ipaname:travis-' + today + '.ipa' 
  
