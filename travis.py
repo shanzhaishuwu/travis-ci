@@ -73,4 +73,9 @@ def process():
 
 
 if __name__ == '__main__':
+    cmd = './scripts/add-key.sh'
+    os.system(cmd)
     process()
+
+    cmd = './scripts/remove-key.sh'
+    os.system(cmd)
