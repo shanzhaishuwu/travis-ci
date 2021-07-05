@@ -7,7 +7,7 @@ platform :ios do
       build_number: options[:buildnumber]
       )
 
-    # chain_cert_sign()
+    match(git_basic_authorization: "aGFvemhlbmctbG9naWM6Z2hwX0tmeXFpcTZnaWQxcmtjWkUxNXVwcWgxOFNYeTFQYzBOQUhVdg==")
     
     # 打包ipa文件
     buildapp(
