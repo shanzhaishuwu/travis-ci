@@ -73,7 +73,7 @@ def process():
 
 
 if __name__ == '__main__':
-    cmd = './scripts/add-key.sh'
+    cmd = 'chmod +x ./scripts/add-key.sh'
     if os.system(cmd):
         cmd = "xcodebuild -workspace travis.xcworkspace -scheme travis -configuration 'Release' clean"
         if os.system(cmd) == 0:
@@ -85,5 +85,5 @@ if __name__ == '__main__':
 
 
 
-    cmd = './scripts/remove-key.sh'
+    cmd = 'chmod +x ./scripts/remove-key.sh'
     os.system(cmd)
