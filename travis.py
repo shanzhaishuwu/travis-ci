@@ -74,8 +74,16 @@ def process():
 
 if __name__ == '__main__':
     cmd = './scripts/add-key.sh'
-    os.system(cmd)
-    process()
+    if os.system(cmd):
+        cmd = "xcodebuild -workspace travis.xcworkspace -scheme travis -configuration 'Release' clean"
+        if os.system(cmd) == 0:
+            cmd = 'xcodebuild archive -workspace travis.xcworkspace -scheme travis -archivePath travis.xcarchive -configuration Release -destination generic/platform=iOS'
+            if os.system(cmd) == 0:
+                cmd = "xcodebuild -exportArchive -archivePath travis.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath output"
+                if os.system(cmd) == 0:
+                    print('delete')
+
+
 
     cmd = './scripts/remove-key.sh'
     os.system(cmd)
