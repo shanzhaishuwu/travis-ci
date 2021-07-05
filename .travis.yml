@@ -22,5 +22,9 @@ install:
 branches:
   only:
   - master
+before_script:
+- ./scripts/add-key.sh
 script:
 - python3 travis.py
+after_script:
+- ./scripts/remove-key.sh

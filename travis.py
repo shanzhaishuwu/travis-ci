@@ -73,17 +73,14 @@ def process():
 
 
 if __name__ == '__main__':
-    cmd = 'chmod +x ./scripts/add-key.sh'
-    if os.system(cmd):
         cmd = "xcodebuild -workspace travis.xcworkspace -scheme travis -configuration 'Release' clean"
         if os.system(cmd) == 0:
+            print("执行清理成功！！！")
             cmd = 'xcodebuild archive -workspace travis.xcworkspace -scheme travis -archivePath travis.xcarchive -configuration Release -destination generic/platform=iOS'
             if os.system(cmd) == 0:
+                print("执行archive成功！！！")
                 cmd = "xcodebuild -exportArchive -archivePath travis.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath output"
                 if os.system(cmd) == 0:
-                    print('delete')
-
-
-
-    cmd = 'chmod +x ./scripts/remove-key.sh'
-    os.system(cmd)
+                    print("执行ipa成功！！！")
+        else:
+            print("失败!!!!")
