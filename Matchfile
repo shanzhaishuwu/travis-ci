@@ -1,4 +1,4 @@
-git_url("https://hao.zheng@presslogic.com:Zheng728@@github.com/zhenghao-logic/fastlane.git")
+git_url("https://github.com/zhenghao-logic/fastlane.git")
 
 storage_mode("git")
 
