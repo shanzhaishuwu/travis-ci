@@ -15,8 +15,6 @@ before_install:
   - gem install fastlane --version "2.186.0"
   # 安装cocoapods
   - gem install cocoapods -v 1.10.1
-  # 设置keychain
-  # - ./add-key.sh
 install:
   # 安装aws3的依赖
   - pip3 install boto3 --user
