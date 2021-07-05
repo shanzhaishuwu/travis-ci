@@ -24,5 +24,3 @@ branches:
   - master
 script:
 - python3 travis.py
-# after_script:
-# - ./scripts/remove_key.sh
