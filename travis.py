@@ -71,14 +71,14 @@ def process():
 
 
 if __name__ == '__main__':
-        cmd = "xcodebuild -workspace travis.xcworkspace -scheme travis -configuration 'Release' clean"
-        if os.system(cmd) == 0:
-            print("执行清理成功！！！")
-            cmd = 'xcodebuild archive -workspace travis.xcworkspace -scheme travis -archivePath travis.xcarchive -configuration Release -destination generic/platform=iOS'
-            if os.system(cmd) == 0:
-                print("执行archive成功！！！")
-                cmd = "xcodebuild -exportArchive -archivePath travis.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath output"
-                if os.system(cmd) == 0:
-                    print("执行ipa成功！！！")
-        else:
-            print("失败!!!!")
+        # cmd = "xcodebuild -workspace travis.xcworkspace -scheme travis -configuration 'Release' clean"
+        # if os.system(cmd) == 0:
+        #     print("执行清理成功！！！")
+        #     cmd = 'xcodebuild archive -workspace travis.xcworkspace -scheme travis -archivePath travis.xcarchive -configuration Release -destination generic/platform=iOS'
+        #     if os.system(cmd) == 0:
+        #         print("执行archive成功！！！")
+        #         cmd = "xcodebuild -exportArchive -archivePath travis.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath output"
+        #         if os.system(cmd) == 0:
+        #             print("执行ipa成功！！！")
+        # else:
+        #     print("失败!!!!")
