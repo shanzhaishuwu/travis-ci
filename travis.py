@@ -38,8 +38,6 @@ def change_plist():
 # 打包ipa
 def package():
     try:
-        
-
         cmd = 'export FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT=120'
         os.system(cmd)
 

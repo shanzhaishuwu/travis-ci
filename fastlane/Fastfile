@@ -2,19 +2,29 @@ default_platform(:ios)
 platform :ios do 
   lane :beta_release do |options|
 
-    # 版本号设置
-    increment_build_number(
-      build_number: options[:buildnumber]
-      )
+    import_certificate(
+      certificate_path: "profile/apple.cer",
+      certificate_password: "default"
+    )
+
+    import_certificate(
+      certificate_path: "profile/dis.p12",
+      certificate_password: "0728"
+    )
+
+    # # 版本号设置
+    # increment_build_number(
+    #   build_number: options[:buildnumber]
+    #   )
     
-    # 打包ipa文件
-    buildapp(
-      workspace: "travis.xcworkspace",
-      configuration: "Release",
-      scheme: "travis",
-      export_method: "ad-hoc",
-      output_name: options[:ipaname]
-      )
+    # # 打包ipa文件
+    # buildapp(
+    #   workspace: "travis.xcworkspace",
+    #   configuration: "Release",
+    #   scheme: "travis",
+    #   export_method: "ad-hoc",
+    #   output_name: options[:ipaname]
+    #   )
     
   end
 
