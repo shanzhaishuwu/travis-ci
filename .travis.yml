@@ -22,7 +22,7 @@ branches:
 # before_script:
 # - "./scripts/add-key.sh"
 script:
-- fastlane beta_release
+- bundle exec fastlane beta_release
 # after_script:
 # - "./scripts/remove-key.sh"
 
