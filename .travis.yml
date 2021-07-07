@@ -1,4 +1,6 @@
-language: objective-c
+language: python
+python: 
+  - "3.9"
 jobs:
   include:
   - name: Python 3.9 on macOS
@@ -19,8 +21,6 @@ install:
 branches:
   only:
   - master
-# before_script:
-# - "./scripts/add-key.sh"
 script:
 - fastlane beta_release buildnumber:101 ipaname:travis.ipa
 # after_script:
