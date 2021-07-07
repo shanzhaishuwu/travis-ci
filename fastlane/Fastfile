@@ -1,10 +1,5 @@
 default_platform(:ios)
 platform :ios do 
-
-  before_all do
-    ENV["SLACK_URL"] = "https://presslogic.slack.com/archives/D0264A15NSV"
-  end 
-
   lane :beta_release do |options|
     chain_cert_sign()
 
@@ -71,7 +66,8 @@ platform :ios do
 
   after_all do |lane|
     slack(
-      message: "Successfully deployed new App Update"
+      message: "Successfully deployed new App Update",
+      slack_url: "https://hooks.slack.com/services/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"
     )
   end 
 end
