@@ -62,19 +62,24 @@ platform :ios do
     )
 
     import_certificate(
+      certificate_path: "./scripts/profile/apple.cer",
+      keychain_name: "login.keychain-db",
+    )
+
+    import_certificate(
       certificate_path: "./scripts/profile/dis.p12",
       certificate_password: "0728",
       keychain_name: "cis.keychain-db",
       keychain_password: "0728"
     )
 
-    update_project_provisioning(
-      xcodeproj: "travis.xcodeproj",
-      profile: "./scripts/profile/tap_adc.mobileprovision",
-      code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
-      build_configuration: "Release",
-      certificate: "./scripts/profile/dis.p12"
-    )
+    # update_project_provisioning(
+    #   xcodeproj: "travis.xcodeproj",
+    #   profile: "./scripts/profile/tap_adc.mobileprovision",
+    #   code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
+    #   build_configuration: "Release",
+    #   certificate: "./scripts/profile/dis.p12"
+    # )
 
   end 
 end

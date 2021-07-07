@@ -22,7 +22,7 @@ branches:
 # before_script:
 # - "./scripts/add-key.sh"
 script:
-- bundle exec fastlane beta_release
+- fastlane beta_release buildnumber:101 ipaname:travis.ipa
 # after_script:
 # - "./scripts/remove-key.sh"
 
