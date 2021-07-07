@@ -60,6 +60,7 @@
 		B847AC3326856E7800D359FB = {
 			isa = PBXGroup;
 			children = (
+				B84AD37D26958EF300CC940F /* output */,
 				B847AC3E26856E7800D359FB /* travis */,
 				B847AC3D26856E7800D359FB /* Products */,
 				8835A424EC9B52CB8D06F4CE /* Pods */,
@@ -86,6 +87,13 @@
 				B847AC4D26856E7900D359FB /* Info.plist */,
 			);
 			path = travis;
+			sourceTree = "<group>";
+		};
+		B84AD37D26958EF300CC940F /* output */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = output;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
