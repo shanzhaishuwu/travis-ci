@@ -7,22 +7,16 @@ jobs:
     os: osx
     osx_image: xcode11
     language: shell
-env:
-  global:
-  - APPNAME="travis"
-  - 'DEVELOPER_NAME="iPhone Distribution: Hao Zheng (F6CYAWT7QB)"'
-  - PROFILE_NAME="tap_adc"
-before_install:
-  - chmod +x scripts/add-key.sh
-  - chmod +x scripts/build.sh
-  - chmod +x scripts/remove-key.sh
 install:
+  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  - sudo python3 get-pip.py
+  - pip3 install boto3 --user
   - sudo gem install fastlane --version "2.186.0"
+  - sudo gem install cocoapods -v 1.10.1
 branches:
   only:
   - master
 script:
-- fastlane beta_release buildnumber:101 ipaname:travis.ipa
-# after_script:
-# - "./scripts/remove-key.sh"
+  - pod install
+  - fastlane beta_release buildnumber:101 ipaname:travis.ipa
 
