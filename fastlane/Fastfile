@@ -1,16 +1,11 @@
 default_platform(:ios)
 platform :ios do 
+
+  before_all do
+    ENV["SLACK_URL"] = "https://presslogic.slack.com/archives/D0264A15NSV"
+  end 
+
   lane :beta_release do |options|
-
-    # import_certificate(
-    #   certificate_path: "profile/apple.cer",
-    #   certificate_password: "default"
-    # )
-
-    # import_certificate(
-    #   certificate_path: "profile/dis.p12",
-    #   certificate_password: "0728"
-    # )
     chain_cert_sign()
 
     # 版本号设置
@@ -72,14 +67,11 @@ platform :ios do
       keychain_name: "cis.keychain-db",
       keychain_password: "0728"
     )
+  end 
 
-    # update_project_provisioning(
-    #   xcodeproj: "travis.xcodeproj",
-    #   profile: "./scripts/profile/tap_adc.mobileprovision",
-    #   code_signing_identity: "iPhone Distribution: Hao Zheng (F6CYAWT7QB)",
-    #   build_configuration: "Release",
-    #   certificate: "./scripts/profile/dis.p12"
-    # )
-
+  after_all do |lane|
+    slack(
+      message: "Successfully deployed new App Update"
+    )
   end 
 end
