@@ -67,8 +67,7 @@ platform :ios do
   after_all do |lane|
     slack(
       message: "Successfully deployed new App Update",
-      slack_url: "https://hooks.slack.com/services/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"
-                  
+      slack_url: "https://hooks.slack.com/services/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"
     )
   end 
 end
